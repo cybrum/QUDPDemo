@@ -2,8 +2,7 @@
 #include "ui_widget.h"
 
 Widget::Widget(QWidget *parent) :
-    QWidget(parent),
-    m_pUIInstance(new Ui::Widget)
+    QWidget(parent),m_pUIInstance(new Ui::Widget)
 {
     m_pUIInstance->setupUi(this);
 
@@ -19,7 +18,7 @@ void Widget::writeMessage()
 {
     if(m_pUIInstance->lineEdit->text().isEmpty())
     {
-        m_Client.sendMessage("*******Hello World! ******\n");
+        m_Client.sendMessage("******* Hello World! ******\n");
     }
     else
     {

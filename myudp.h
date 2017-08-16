@@ -10,7 +10,6 @@ class MyUDP : public QObject
 public:
     explicit MyUDP(QObject *parent = 0);
     void sendMessage(QString strMsg);
-signals:
 
 public slots:
     QString readData();
