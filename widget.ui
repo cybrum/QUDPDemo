@@ -74,6 +74,9 @@
        <property name="readOnly">
         <bool>true</bool>
        </property>
+       <property name="placeholderText">
+        <string>0.0.0.0</string>
+       </property>
       </widget>
      </item>
      <item>
@@ -87,6 +90,9 @@
       <widget class="QLineEdit" name="lnEdtPortNo">
        <property name="readOnly">
         <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>0000</string>
        </property>
       </widget>
      </item>
