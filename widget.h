@@ -18,6 +18,8 @@ public:
 
 public slots:
     void writeMessage();
+    void listenMessage();
+    void clearLog();
 
 private:
     Ui::Widget *m_pUIInstance = nullptr;

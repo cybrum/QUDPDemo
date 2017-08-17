@@ -18,20 +18,23 @@ void MyUDP::sendMessage(QString strMsg)
 QString MyUDP::readData()
 {
     QByteArray buffer;
+    buffer.clear();
     buffer.resize(m_pSocket->pendingDatagramSize());
 
     QHostAddress sender;
     quint16 senderPort;
 
     m_pSocket->readDatagram(buffer.data(), buffer.size(),&sender, &senderPort);
-    QString readString = "\nMessage from: "+  sender.toString()+ "\nMessage port: "+ senderPort + "\nMessage: " + buffer;
+   // QString readString = "\nMessage from: "+  sender.toString()+ "\nMessage port: "+ senderPort + "\nMessage: " + buffer;
 
-    qDebug() << "Message from: " << sender.toString();
-    qDebug() << "Message port: " << senderPort;
-    qDebug() << "Message: " << buffer;
-    if(sender.toString().isEmpty())
-    {
-        return "connected";
-    }
-    return readString;
+    m_strIPAddress = sender.toString();
+    m_strPort = QString::number(senderPort);
+//    qDebug() << "Message from: " << sender.toString();
+//    qDebug() << "Message port: " << senderPort;
+//    qDebug() << "Message: " << buffer;
+//    if(buffer.isEmpty())
+//    {
+//        return "Connection established.";
+//    }
+    return buffer;
 }
