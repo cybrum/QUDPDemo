@@ -20,6 +20,7 @@ public slots:
     void writeMessage();
     void listenMessage();
     void clearLog();
+    void exportLog();
 
 private:
     Ui::Widget *m_pUIInstance = nullptr;
