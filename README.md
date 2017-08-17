@@ -1,10 +1,10 @@
-# QUDPDemo
+# QUDPDemo / UDPLogger
 Qt Based UDP Demo Logger
 
 Features:
-1.Qt based UI
-2.Send and receive message through UDP in localhost.
-3.Log UDP message in log.txt with time stamp.
+1.Qt based UI                               
+2.Send and receive message through UDP in localhost.                         
+3.Log UDP message in log.txt with time stamp.                                  
 
 About UDP:
 
