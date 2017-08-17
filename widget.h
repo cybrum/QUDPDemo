@@ -2,7 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include "myudp.h"
+#include "udphelper.h"
 
 namespace Ui {
 class Widget;
@@ -23,7 +23,7 @@ public slots:
 
 private:
     Ui::Widget *m_pUIInstance = nullptr;
-    MyUDP m_Client;
+    UDPHelper m_Client;
 };
 
 #endif // WIDGET_H

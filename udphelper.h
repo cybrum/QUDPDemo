@@ -1,14 +1,14 @@
-#ifndef MYUDP_H
-#define MYUDP_H
+#ifndef UDPHELPER_H
+#define UDPHELPER_H
 
 #include <QObject>
 #include <QUdpSocket>
 
-class MyUDP : public QObject
+class UDPHelper : public QObject
 {
     Q_OBJECT
 public:
-    explicit MyUDP(QObject *parent = 0);
+    explicit UDPHelper(QObject *parent = 0);
     void sendMessage(QString strMsg);
     QString senderIPAddress() {  return m_strIPAddress;}
     QString senderPort()  {  return m_strPort;}
@@ -23,4 +23,4 @@ private:
 
 };
 
-#endif // MYUDP_H
+#endif // UDPHELPER_H

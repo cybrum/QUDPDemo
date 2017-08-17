@@ -1,6 +1,6 @@
-#include "myudp.h"
+#include "udphelper.h"
 
-MyUDP::MyUDP(QObject *parent) :
+UDPHelper::UDPHelper(QObject *parent) :
     QObject(parent)
 {
     // Create an QUDP socket
@@ -8,14 +8,14 @@ MyUDP::MyUDP(QObject *parent) :
     m_pSocket->bind(QHostAddress::LocalHost, 1234);
 }
 
-void MyUDP::sendMessage(QString strMsg)
+void UDPHelper::sendMessage(QString strMsg)
 {
     QByteArray Data;
     Data.append(strMsg);
     m_pSocket->writeDatagram(Data, QHostAddress::LocalHost, 1234);
 }
 
-QString MyUDP::readData()
+QString UDPHelper::readData()
 {
     QByteArray buffer;
     buffer.clear();
