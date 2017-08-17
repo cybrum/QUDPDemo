@@ -1,5 +1,10 @@
 # QUDPDemo
-Qt Based UDP Demo
+Qt Based UDP Demo Logger
+
+Features:
+1.Qt based UI
+2.Send and receive message through UDP in localhost.
+3.Log UDP message in log.txt with time stamp.
 
 About UDP:
 
@@ -16,3 +21,7 @@ From Qt5 document:
 
 "UDP (User Datagram Protocol) is a lightweight, unreliable, datagram-oriented, connectionless protocol. 
 It can be used when reliability isn't important. QUdpSocket is a subclass of QAbstractSocket that allows you to send and receive UDP datagrams."
+
+
+Copyright: Nibedit Dey,2017
+ 
