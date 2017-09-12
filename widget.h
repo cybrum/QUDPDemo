@@ -21,6 +21,7 @@ public slots:
     void listenMessage();
     void clearLog();
     void exportLog();
+    void newMessage();
 
 private:
     Ui::Widget *m_pUIInstance = nullptr;

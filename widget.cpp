@@ -15,7 +15,13 @@ Widget::Widget(QWidget *parent) :
     connect(m_pUIInstance->listenButton,SIGNAL(clicked()),this, SLOT(listenMessage()));
     connect(m_pUIInstance->clearButton,SIGNAL(clicked()),this, SLOT(clearLog()));
     connect(m_pUIInstance->exportBtn,SIGNAL(clicked()),this, SLOT(exportLog()));
+    connect(&m_Client,SIGNAL(dataReceived()),this, SLOT(newMessage()));
     writeMessage();
+}
+
+void Widget::newMessage()
+{
+    m_pUIInstance->textBrowser->setText(m_pUIInstance->textBrowser->toPlainText()+"\n"+m_Client.readData());
 }
 
 Widget::~Widget()

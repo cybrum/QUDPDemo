@@ -6,7 +6,27 @@ UDPHelper::UDPHelper(QObject *parent) :
     // Create an QUDP socket
     m_pSocket = new QUdpSocket(this);
     m_pSocket->bind(QHostAddress::LocalHost, 1234);
+
+    connect(m_pSocket, SIGNAL(readyRead()),
+            this, SLOT(readPendingDatagrams()));
 }
+
+void UDPHelper::readPendingDatagrams()
+ {
+     while (m_pSocket->hasPendingDatagrams()) {
+
+         //Refer Qt documentation for available platform support.
+         //Some features of QNetworkDatagram are not supported in all operating systems.
+         //Only the address and ports of the remote host (sender in received packets and
+         //destination for outgoing packets) are supported in all systems.
+         //On most operating systems, the other features are supported only for IPv6.
+         //Software should check at runtime whether the rest could be determined for IPv4 addresses.
+
+         //TODO: send read data here?
+         //QNetworkDatagram datagram = m_pSocket->receiveDatagram();
+         emit dataReceived();
+     }
+ }
 
 void UDPHelper::sendMessage(QString strMsg)
 {

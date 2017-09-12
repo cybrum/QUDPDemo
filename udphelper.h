@@ -13,8 +13,11 @@ public:
     QString senderIPAddress() {  return m_strIPAddress;}
     QString senderPort()  {  return m_strPort;}
 
+signals:
+    void dataReceived();
 public slots:
     QString readData();
+    void readPendingDatagrams();
 
 private:
     QUdpSocket *m_pSocket = nullptr;
